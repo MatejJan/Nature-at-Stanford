@@ -1,3 +1,3 @@
 $(function(){
-  console.log("We are lodaded!");
+  console.log("We are loaded!");
 });
