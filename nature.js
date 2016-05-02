@@ -1,12 +1,27 @@
 $(function(){
   console.log("We are loaded!");
 
-  $(".posts ul").slick({
-  	adaptiveHeight: true,
+  var posts = $(".posts ul")
+
+  // Slick main
+  posts.slick({
   	autoplay: true,
   	autoplaySpeed: 1000,
   	dots: true,
   	draggable: false,
-  	mobileFirst: true
+  	mobileFirst: true,
+  	fade: true,
+  	speed: 1500,
+  	pauseOnDotsHover: true,
   });
+
+  // pauses/plays carousel upon hovering on arrows
+  $(".slick-arrow").hover(
+  	function() {
+  		posts.slick("slickPause");
+  	},
+  	function() {
+  		posts.slick("slickPlay");
+  	}
+  );
 });

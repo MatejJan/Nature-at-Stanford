@@ -21,7 +21,14 @@ html body .background-video video {
   min-width: 100%;
   min-height: 100%;
 }
+
+/* Kyle added */
 .posts {
 	width: 90%;
 	margin: 0 auto;
+}
+.post-content {
+	background-color: white;
+	width: 50%;
+	margin-left: 60%;
 }
