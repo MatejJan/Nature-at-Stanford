@@ -1,18 +1,31 @@
 html {
-  background: #8c1515;
+  background: #556b2f;
 }
-
 html body {
   margin: 0;
+  padding: 0;
+}
+
+html body .background-video {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+html body .background-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .header {
 	color: white;
-}
-
-.cover video {
-  width: 100%;
-  height: auto;
 }
 
 .posts {
