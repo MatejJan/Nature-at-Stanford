@@ -1,5 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic")
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic")
+
+// Primary palette
+cardinal-red = #8C1515
+cool-gray = #4D4F53
+black = #000000
+
+// Neutral color palette
+neutral1 = #D2C295
+neutral2 = #B3995D
+neutral3 = #928B81
+neutral4 = #B6B1A9
+neutral5 = #DAD7CB
+neutral6 = #C7D1C5
+neutral7 = #4D5357
+neutral8 = #5F574F
+
+// Deep tone color palette
+deep-tone1 = #5E3032
+deep-tone2 = #8D3C1E
+deep-tone3 = #00505C
+deep-tone4 = #175E54
+deep-tone5 = #53284F
+
+// Bright color palette
+bright-color1 = #0098DB
+bright-color2 = #007C92
+bright-color3 = #009B76
+bright-color4 = #B26F16
+bright-color5 = #E98300
+bright-color6 = #EAAB00
+
+// Web colors
+dark-red = #820000
+black100 = #2e2d29
+black80 = #585754
+gray = #3f3c30
+gray90 = #565347
+gray60 = #8a887d
+sandstone = #ddcf99
+sandstone50 = #eee6cb
+sandstone35 = #f3efd8
+sandstone25 = #f6f3e5
+sandstone20 = #f8f6ea
+beige = #9d9573
+beige85 = #aca68d
+beige60 = #c4bfa9
+beige40 = #d5d0c0
+beige30 = #e3dfd5
+beige20 = #e9e6df
+beige10 = #f2f1eb
+beige5 = #fbfbf9
+
+*
+  box-sizing border-box
+
 html
-  background darkolivegreen
+  background black100
+  font-family 'Source Sans Pro', sans-serif
 
   body
     margin 0
@@ -20,4 +78,117 @@ html
         transform translate(-50%, -50%)
         min-width 100%
         min-height 100%
-        transition all 2s
+        transition opacity 2s
+        opacity 0
+
+    .header
+      position fixed
+      top 0
+      left 0
+      right 0
+      height 5em
+      padding-left 5em
+      background alpha(cardinal-red, 0.8)
+      color white
+
+      .logo
+        position absolute
+        left 1em
+        top 1em
+        height 3em
+
+      .title
+        margin 0.7rem 0 0.3rem
+        font-family 'Crimson Text', serif
+        font-size 1.5rem
+        line-height 2rem
+        font-weight 600
+
+      .byline
+        margin 0
+        font-size 0.9rem
+        font-weight 300
+
+    .posts
+      position absolute
+      top 5em
+      left 0
+      right 0
+      margin 0
+      padding 0
+      height calc(100vh - 5em)
+
+      .post
+        &:focus
+          outline none
+
+        .post-content
+          display block
+          position relative
+          width 30em
+          margin 3em 6em auto auto
+          padding 1em
+          background alpha(sandstone20, 0.95)
+
+      .slick-arrow
+        display block
+        position absolute
+        z-index 1
+        top 0
+        bottom 0
+        width 5em
+        padding 0
+        border none
+        background none
+        cursor pointer
+        color transparent
+        transition all 0.5s
+
+        &:hover
+          background alpha(white, 0.2)
+
+        &:focus
+          outline none
+
+        &.slick-prev
+          left 0
+
+        &.slick-next
+          right 0
+
+      .slick-dots
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        margin 0
+        paddin 0
+        list-style none
+        text-align center
+
+        li
+          display inline-block
+
+          button
+            width 2em
+            height 2em
+            border-radius 2em
+            border 0.2em solid transparent
+            margin 2em 1em
+            color alpha(white, 0.5)
+            background alpha(deep-tone4, 1)
+            cursor pointer
+            transition all 0.5s
+
+            &:hover
+              color white
+
+            &:focus
+              outline none
+
+          &.slick-active
+            button
+              border-color alpha(white, 0.5)
+
+              &:hover
+                border-color white
