@@ -15,7 +15,7 @@ $(function(){
   	pauseOnDotsHover: true,
   });
 
-  // pauses/plays carousel upon hovering on arrows
+  // Pauses carousel upon hovering on arrows
   $(".slick-arrow").hover(
   	function() {
   		posts.slick("slickPause");
