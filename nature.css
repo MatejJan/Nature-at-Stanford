@@ -1,6 +1,11 @@
 html {
-  background: #556b2f;
+  background: #8c1515;
 }
+
 html body {
   margin: 0;
+}
+
+.header {
+	color: white;
 }
