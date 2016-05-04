@@ -31,12 +31,17 @@ html body .background-video video {
 }
 html body .header {
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
   height: 5em;
   padding-left: 5em;
   background: rgba(140,21,21,0.8);
+  color: #fff;
+}
+html body .header a {
+  text-decoration: none;
   color: #fff;
 }
 html body .header .logo {
@@ -59,23 +64,89 @@ html body .header .byline {
 }
 html body .posts {
   position: absolute;
-  top: 5em;
+  top: 0;
   left: 0;
   right: 0;
-  margin: 0;
-  padding: 0;
-  height: calc(100vh - 5em);
+  bottom: 0;
 }
-html body .posts .post:focus {
+html body .posts .slick-list {
+  height: 100%;
+}
+html body .posts .slick-list .slick-track {
+  height: 100%;
+}
+html body .posts .slick-list .slick-track .post {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  padding: 10em 6em 6em;
+  overflow: scroll;
+}
+html body .posts .slick-list .slick-track .post:focus {
   outline: none;
 }
-html body .posts .post .post-content {
+html body .posts .slick-list .slick-track .post:only-child .post-content {
+  width: 50em;
+  margin: 0 auto;
+}
+html body .posts .slick-list .slick-track .post:only-child .post-content .post-title {
+  font-size: 1.5em;
+}
+html body .posts .slick-list .slick-track .post .post-content {
   display: block;
   position: relative;
   width: 30em;
-  margin: 3em 6em auto auto;
+  margin: 0 0 auto auto;
   padding: 1em;
   background: rgba(248,246,234,0.95);
+}
+html body .posts .slick-list .slick-track .post .post-content .post-title {
+  text-transform: uppercase;
+}
+html body .posts .slick-list .slick-track .post .post-content figure {
+  display: block;
+  margin: 1em auto;
+  max-width: 100%;
+}
+html body .posts .slick-list .slick-track .post .post-content figure iframe,
+html body .posts .slick-list .slick-track .post .post-content figure img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
+html body .posts .slick-list .slick-track .post .post-content .email-sign-up {
+  background: #c7d1c5;
+}
+html body .posts .slick-list .slick-track .post .post-content .read_more_container {
+  position: relative;
+  margin: 1em auto;
+  width: 10em;
+  padding: 1em;
+  text-transform: uppercase;
+  background: #009b76;
+  border-radius: 0.5em;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+}
+html body .posts .slick-list .slick-track .post .post-content .read_more_container .read_more {
+  text-decoration: none;
+  color: transparent;
+}
+html body .posts .slick-list .slick-track .post .post-content .read_more_container .read_more::before {
+  content: "Find out more";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  color: #fff;
+}
+html body .posts .slick-list .slick-track .post .post-content .read_more_container:hover {
+  background: #00bf91;
 }
 html body .posts .slick-arrow {
   display: block;
@@ -91,8 +162,25 @@ html body .posts .slick-arrow {
   color: transparent;
   transition: all 0.5s;
 }
+html body .posts .slick-arrow::after {
+  content: "➔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: inherit;
+  font-size: 2em;
+}
 html body .posts .slick-arrow:hover {
   background: rgba(255,255,255,0.2);
+}
+html body .posts .slick-arrow:hover::before {
+  border-color: #fff;
+  color: #fff;
+}
+html body .posts .slick-arrow:hover.slick-prev::after {
+  border-right-color: #fff;
 }
 html body .posts .slick-arrow:focus {
   outline: none;
@@ -100,11 +188,14 @@ html body .posts .slick-arrow:focus {
 html body .posts .slick-arrow.slick-prev {
   left: 0;
 }
+html body .posts .slick-arrow.slick-prev::after {
+  transform: translate(-50%, -50%) scale(-1, 1);
+}
 html body .posts .slick-arrow.slick-next {
   right: 0;
 }
 html body .posts .slick-dots {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -122,19 +213,23 @@ html body .posts .slick-dots li button {
   border-radius: 2em;
   border: 0.2em solid transparent;
   margin: 2em 1em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
   background: #175e54;
   cursor: pointer;
   transition: all 0.5s;
+  font: inherit;
+  font-weight: 600;
+  box-shadow: 0 3px 3px rgba(88,87,84,0.4);
 }
 html body .posts .slick-dots li button:hover {
   color: #fff;
+  background: #1f7e70;
 }
 html body .posts .slick-dots li button:focus {
   outline: none;
 }
 html body .posts .slick-dots li.slick-active button {
-  border-color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.8);
 }
 html body .posts .slick-dots li.slick-active button:hover {
   border-color: #fff;

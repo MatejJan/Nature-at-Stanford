@@ -83,6 +83,7 @@ html
 
     .header
       position fixed
+      z-index 2
       top 0
       left 0
       right 0
@@ -90,6 +91,10 @@ html
       padding-left 5em
       background alpha(cardinal-red, 0.8)
       color white
+
+      a
+        text-decoration none
+        color white
 
       .logo
         position absolute
@@ -111,24 +116,90 @@ html
 
     .posts
       position absolute
-      top 5em
+      top 0
       left 0
       right 0
-      margin 0
-      padding 0
-      height calc(100vh - 5em)
+      bottom 0
 
-      .post
-        &:focus
-          outline none
+      .slick-list
+        height 100%
 
-        .post-content
-          display block
-          position relative
-          width 30em
-          margin 3em 6em auto auto
-          padding 1em
-          background alpha(sandstone20, 0.95)
+        .slick-track
+          height 100%
+
+          .post
+            position absolute !important
+            top 0 !important
+            left 0 !important
+            right 0 !important
+            bottom 0 !important
+            padding 10em 6em 6em
+            overflow scroll
+
+            &:focus
+              outline none
+
+            &:only-child
+              .post-content
+                width 50em
+                margin 0 auto
+
+                .post-title
+                  font-size 1.5em
+
+            .post-content
+              display block
+              position relative
+              width 30em
+              margin 0 0 auto auto
+              padding 1em
+              background alpha(sandstone20, 0.95)
+
+              .post-title
+                text-transform uppercase
+
+              figure
+                display block
+                margin 1em auto
+                max-width 100%
+
+                iframe
+                img
+                  max-width 100%
+                  height auto
+                  margin 1em auto
+
+              .email-sign-up
+                background neutral6
+
+              .read_more_container
+                position relative
+                margin 1em auto
+                width 10em
+                padding 1em
+                text-transform uppercase
+                background bright-color3
+                border-radius 0.5em
+                cursor pointer
+                text-align center
+                transition all 0.5s
+
+                .read_more
+                  text-decoration none
+                  color transparent
+
+                  &::before
+                    content "Find out more"
+                    position absolute
+                    top 0
+                    left 0
+                    right 0
+                    bottom 0
+                    padding 1em
+                    color white
+
+                &:hover
+                  background lighten(bright-color3, 10%)
 
       .slick-arrow
         display block
@@ -144,8 +215,25 @@ html
         color transparent
         transition all 0.5s
 
+        &::after
+          content "➔"
+          position absolute
+          top 50%
+          left 50%
+          transform translate(-50%, -50%)
+          color white
+          font inherit
+          font-size 2em
+
         &:hover
           background alpha(white, 0.2)
+
+          &::before
+            border-color white
+            color white
+
+          &.slick-prev::after
+            border-right-color white
 
         &:focus
           outline none
@@ -153,11 +241,14 @@ html
         &.slick-prev
           left 0
 
+          &::after
+            transform translate(-50%, -50%) scale(-1, 1)
+
         &.slick-next
           right 0
 
       .slick-dots
-        position absolute
+        position fixed
         bottom 0
         left 0
         right 0
@@ -175,20 +266,24 @@ html
             border-radius 2em
             border 0.2em solid transparent
             margin 2em 1em
-            color alpha(white, 0.5)
-            background alpha(deep-tone4, 1)
+            color alpha(white, 0.8)
+            background deep-tone4
             cursor pointer
             transition all 0.5s
+            font inherit
+            font-weight 600
+            box-shadow 0 3px 3px alpha(black80, 0.4)
 
             &:hover
               color white
+              background lighten(deep-tone4, 10%)
 
             &:focus
               outline none
 
           &.slick-active
             button
-              border-color alpha(white, 0.5)
+              border-color alpha(white, 0.8)
 
               &:hover
                 border-color white

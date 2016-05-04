@@ -8,7 +8,7 @@ $(function(){
 	// Slick main
 	$posts.slick({
 		autoplay: true,
-		autoplaySpeed: 10000,
+		autoplaySpeed: 6000,
 		dots: true,
 		draggable: false,
 		mobileFirst: true,
@@ -59,7 +59,7 @@ $(function(){
   });
 
 	// Pauses carousel when user hovers on content, dots, or arrows
-	$(".slick-arrow, .post-content, .slick-dots li").hover(
+	$(".slick-arrow, .slick-dots li").hover(
 		function() {
 			$posts.slick("slickPause");
 		},
@@ -72,4 +72,10 @@ $(function(){
 	$(".slick-arrow, .post-content, .slick-dots li").click(function() {
     stopAutoplay = true;
   });
+
+  // Scroll to sub-header if there is one.
+  $h2 = $('.post h2');
+  if ($h2.length>0) {
+    $('.post').scrollTop($h2.offset().top - 100);
+  }
 });
