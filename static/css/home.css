@@ -84,6 +84,14 @@ video {
 	top: 20%;
 }
 
+.white-popup-block {
+  background: #FFF;
+  padding: 20px 30px;
+  text-align: left;
+  max-width: 650px;
+  margin: 40px auto;
+  position: relative;
+}
 
 /* Boxes */
 
