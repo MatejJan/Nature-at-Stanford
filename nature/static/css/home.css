@@ -35,6 +35,7 @@ html, body {
 	bottom: 0;
 	right: 0;
 	overflow: hidden;
+	background-color: grey;
 }
 
 video {
@@ -105,7 +106,7 @@ video {
 	text-align: center;
 	color: #fff;
 	opacity: 0;
-	background: rgba(240,95,64,.9);
+	background: #8C1515;
 	transition: all .35s;
 }
 
@@ -153,3 +154,30 @@ video {
 	background-image: url("../img/project_images/matej-cover.png");
 }
 
+#cp {
+	background-image: url("../img/project_images/camila.png");
+}
+
+#ls {
+	background-image: url("../img/project_images/lynn2.jpg");
+}
+
+#pf {
+	background-image: url("../img/project_images/phoebe.png");
+}
+
+#s1 {
+	background-image: url("../img/portfolio/1.jpg");
+}
+
+#s2 {
+	background-image: url("../img/portfolio/2.jpg");
+}
+
+#s3 {
+	background-image: url("../img/portfolio/3.jpg");
+}
+
+#s4 {
+	background-image: url("../img/portfolio/4.jpg");
+}
