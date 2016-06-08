@@ -14,13 +14,6 @@ body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
 }
 
-a {
-    color: #f05f40;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
 a:hover,
 a:focus {
     color: #eb3812;
@@ -45,13 +38,6 @@ section {
 
 .text-faded {
     color: rgba(255,255,255,.7);
-}
-
-.portfolio-box {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 650px;
 }
 
 .portfolio-box .portfolio-box-caption {

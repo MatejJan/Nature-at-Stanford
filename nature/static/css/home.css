@@ -8,18 +8,19 @@ html, body {
 }
 
 .grid4x4 {
-	display:table;
-	height:100%;
-	width:100%;
+	display: table;
+	height: 100%;
+	width: 100%;
 }
 
 .grid4x4 > div {
-	display:table-row;
+	display: table-row;
 }
 
 .grid4x4 > div > div {
-	display:table-cell;
-	outline: 1px solid orange
+	display: table-cell;
+	/*outline: 1px solid orange;*/
+	padding: 1px;
 }
 
 #container {
@@ -38,6 +39,7 @@ html, body {
 
 video {
 	width: 100%;
+	transform: translateY(-35%);
 }
 
 #video-filter {
@@ -71,37 +73,39 @@ video {
 #container, #video-filter, #title {
 	float: left;
 	position: absolute;
-	width: 50%;
+	width: 100%;
 	height: 50%;
 	top: 25%;
-	left: 25%;
+	/*left: 25%;*/
+}
+
+#title {
+	top: 20%;
 }
 
 
-
-
-
-
+/* Boxes */
 
 .portfolio-box {
-	display: block;
 	position: relative;
-	margin: 0 auto;
-	max-width: 650px;
+	height: 100%;
+	width: 100%;
+	display: block;
+	color: #f05f40;
+	transition: all .35s;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .portfolio-box-caption {
-	display: block;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+	position: relative;
 	height: 100%;
+	width: 100%;
 	text-align: center;
 	color: #fff;
 	opacity: 0;
 	background: rgba(240,95,64,.9);
-	-webkit-transition: all .35s;
-	-moz-transition: all .35s;
 	transition: all .35s;
 }
 
@@ -113,10 +117,15 @@ video {
 	transform: translateY(-50%);
 }
 
+@media(min-width:768px) {
+	.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+		font-size: 16px;
+	}
 
-
-
-
+	.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+		font-size: 22px;
+	}
+}
 
 .project-category, .project-name {
 	padding: 0 15px;
@@ -136,5 +145,11 @@ video {
 
 .portfolio-box:hover .portfolio-box-caption {
 	opacity: 1;
+}
+
+/* Background images */
+
+#mj {
+	background-image: url("../img/project_images/matej-cover.png");
 }
 
