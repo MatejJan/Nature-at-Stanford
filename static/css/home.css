@@ -20,7 +20,6 @@ html, body {
 .grid4x4 > div > div {
 	display: table-cell;
 	padding: 5px 3px 5px 3px;
-
 }
 
 #container {
@@ -108,6 +107,11 @@ video {
 	background-size: cover;
 }
 
+.portfolio-box:focus, .portfolio-box-EMPTY:focus {
+	outline: 0;
+}
+
+
 .portfolio-box-caption {
 	position: relative;
 	height: 100%;
@@ -163,8 +167,8 @@ video {
 	background-image: url("../img/project_images/matej-cover.png");
 }
 
-#cp {
-	background-image: url("../img/project_images/camila.png");
+#ac {
+	background-image: url("../img/project_images/andrea.png");
 }
 
 #ls {
@@ -175,8 +179,8 @@ video {
 	background-image: url("../img/project_images/phoebe.png");
 }
 
-#s1 {
-	background-image: url("../img/portfolio/1.jpg");
+#ep {
+	background-image: url("../img/project_images/emily.png");
 }
 
 #s2 {
