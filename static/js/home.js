@@ -1,63 +1,62 @@
 $(function(){
 
-	// // Get parent element of all the posts.
-	// var $posts = $(".posts");
+	// Get parent element of all the posts.
+	var $posts = $(".posts");
 
-	// // Whether autoplay should be off
-	// var stopAutoplay = false;
+	// Whether autoplay should be off
+	var stopAutoplay = false;
 
-	// // Slick main
-	// $posts.slick({
-	// 	autoplay: true,
-	// 	autoplaySpeed: 10000,
-	// 	draggable: false,
-	// 	mobileFirst: true,
-	// 	fade: true,
-	// 	speed: 500,
-	// 	pauseOnHover: false,
-	// 	arrows: false
-	// });
+	// Slick main
+	$posts.slick({
+		autoplay: true,
+		autoplaySpeed: 10000,
+		draggable: false,
+		mobileFirst: true,
+		fade: true,
+		speed: 500,
+		pauseOnHover: false,
+		arrows: false
+	});
 
-	// var getVideoClass = function($element) {
-	// 	cssClasses = $element.attr('class').split(' ');
-	// 	for (var i=0; i<cssClasses.length;i++) {
-	// 		if (cssClasses[i].indexOf('video') > -1) {
-	// 			return cssClasses[i]
-	// 		}
-	// 	}
-	// 	return null;
-	// };
+	var getVideoClass = function($element) {
+		cssClasses = $element.attr('class').split(' ');
+		for (var i=0; i<cssClasses.length;i++) {
+			if (cssClasses[i].indexOf('video') > -1) {
+				return cssClasses[i]
+			}
+		}
+		return null;
+	};
 
+	var slideIndex = 0;
+	var videoClass = getVideoClass($('.posts .post').eq(slideIndex));
 
-	// var slideIndex = 0;
-	// var videoClass = getVideoClass($('.posts .post').eq(slideIndex));
+	var switchVideo = function(newVideoClass){
+		// Put the new video underneath the current one.
+		$('.background-video .' + newVideoClass).css('z-index', '1');
 
-	// var switchVideo = function(newVideoClass){
-	// 	// Put the new video underneath the current one.
-	// 	$('.background-video .' + newVideoClass).css('z-index', '1');
+		// Fade the current video to 0.
+		$('.background-video .' + videoClass).css('opacity', '0');
 
-	// 	// Fade the current video to 0.
-	// 	$('.background-video .' + videoClass).css('opacity', '0');
+		var oldVideoClass = videoClass
 
-	// 	var oldVideoClass = videoClass
+		setTimeout(function(){
+			$('.background-video .' + oldVideoClass).css('z-index', '0').css('opacity', '1');
+			$('.background-video .' + newVideoClass).css('z-index', '2');
+		}, 2100);
 
-	// 	setTimeout(function(){
-	// 		$('.background-video .' + oldVideoClass).css('z-index', '0').css('opacity', '1');
-	// 		$('.background-video .' + newVideoClass).css('z-index', '2');
-	// 	}, 2100);
+		videoClass = newVideoClass;
+	};
 
-	// 	videoClass = newVideoClass;
-	// };
+	$('.background-video .' + videoClass).css('opacity', '1').css('z-index', '2');
+	setTimeout(function(){
+		$('.background-video video').css('opacity', '1');
+	}, 2100);
 
-	// $('.background-video .' + videoClass).css('opacity', '1').css('zIndex', '2');
-	// setTimeout(function(){
-	// 	$('.background-video video').css('opacity', '1');
-	// }, 2100);
-
-	// $posts.on('afterChange', function(event, slick, currentSlide){
-	// 	var newVideoClass = getVideoClass($('.posts .post').eq(currentSlide));
-	// 	switchVideo(newVideoClass);
-	// });
+	$posts.on('afterChange', function(event, slick, currentSlide){
+		var newVideoClass = getVideoClass($('.posts .post').eq(currentSlide));
+		switchVideo(newVideoClass);
+	});
 
 	$('.portfolio-box').magnificPopup({
 	  type: 'ajax',

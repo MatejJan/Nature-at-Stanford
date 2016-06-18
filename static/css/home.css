@@ -19,33 +19,31 @@ html, body {
 
 .grid4x3 > div > div {
 	display: table-cell;
-	padding: 5px 3px 5px 3px;
+	padding: 7px 4px 7px 4px;
 }
 
-#container {
-	z-index: 1;
-}
-
-#video {
-	position: absolute;
-	text-align: center;
+.background-video {
+	z-index: -1;
 	top: 0;
 	left: 0;
-	bottom: 1px;
 	right: 0;
+	bottom: 0;
 	overflow: hidden;
 	background-color: #FFF;
+	z-index: -1;
 }
 
-video {
-	width: 100%;
+.background-video video {
+	position: absolute;
+	top: 20%;
 	transform: translateY(-35%);
+	transition: opacity 2s;
+	opacity: 0;
 }
 
 #video-filter {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.3);
 	z-index: 2;
-	margin-top: -1px;
 }
 
 #title {
@@ -71,7 +69,7 @@ video {
 	letter-spacing: 1px;
 }
 
-#container, #video-filter, #title {
+.background-video, #video-filter, #title {
 	float: left;
 	position: absolute;
 	width: 100%;
@@ -84,13 +82,13 @@ video {
 }
 
 .white-popup-block {
-  background: #FFF;
-  padding: 30px 30px;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  max-width: 60%;
-  margin: 20px auto;"
+	background: #FFF;
+	padding: 30px 30px;
+	text-align: left;
+	position: relative;
+	overflow: hidden;
+	max-width: 60%;
+	margin: 20px auto;"
 }
 
 /* Boxes */
