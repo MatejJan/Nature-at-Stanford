@@ -9,7 +9,7 @@ $(function(){
 	// Slick main
 	$posts.slick({
 		autoplay: true,
-		autoplaySpeed: 10000,
+		autoplaySpeed: 8000,
 		draggable: false,
 		mobileFirst: true,
 		fade: true,
