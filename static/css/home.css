@@ -7,17 +7,17 @@ html, body {
 	height: 100%
 }
 
-.grid4x4 {
+.grid4x3 {
 	display: table;
 	height: 100%;
 	width: 100%;
 }
 
-.grid4x4 > div {
+.grid4x3 > div {
 	display: table-row;
 }
 
-.grid4x4 > div > div {
+.grid4x3 > div > div {
 	display: table-cell;
 	padding: 5px 3px 5px 3px;
 }
@@ -185,12 +185,4 @@ video {
 
 #s2 {
 	background-image: url("../img/portfolio/2.jpg");
-}
-
-#s3 {
-	background-image: url("../img/portfolio/3.jpg");
-}
-
-#s4 {
-	background-image: url("../img/portfolio/4.jpg");
 }
