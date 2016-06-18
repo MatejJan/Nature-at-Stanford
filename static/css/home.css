@@ -107,6 +107,7 @@ html, body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	z-index: 5;
 }
 
 .portfolio-box:focus, .portfolio-box-EMPTY:focus {
