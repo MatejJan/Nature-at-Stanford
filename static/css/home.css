@@ -19,7 +19,7 @@ html, body {
 
 .grid4x3 > div > div {
 	display: table-cell;
-	padding: 7px 4px 7px 4px;
+	padding: 8px 4px 8px 4px;
 }
 
 .background-video {
