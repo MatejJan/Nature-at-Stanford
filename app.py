@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__, static_url_path='')
 
 @app.route('/')
 def home():
-	return app.send_static_file('home.html')
+	return render_template('home.html')
 
 @app.route('/projects/<int:project_id>')
 def project_card(project_id):
