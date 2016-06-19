@@ -1,5 +1,23 @@
 $(function(){
 
+	/////////////////////////////
+	// Randomize project boxes //
+	/////////////////////////////
+	var $gridRows = $('#grid4x3 .grid-row:not(.empty)');
+	var $elements = $('#grid4x3 .grid-row:not(.empty) > div');
+
+	$gridRows.each(function() {
+		// three columns
+		for (var j = 0; j < 3; ++j) {
+			$(this).append($elements.splice(Math.floor(Math.random() * $elements.length), 1)[0]);
+		}
+	})
+
+
+	//////////////////////////////////////////////////////
+	// Cycling out background video with Slick Carousel //
+	//////////////////////////////////////////////////////
+
 	// Get parent element of all the posts.
 	var $posts = $(".posts");
 
@@ -58,10 +76,15 @@ $(function(){
 		switchVideo(newVideoClass);
 	});
 
+
+	//////////////////////////////////////
+	// Magnific popup for project boxes //
+	//////////////////////////////////////
+
 	$('.portfolio-box').magnificPopup({
-	  type: 'ajax',
-	  alignTop: true,
-	  overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+		type: 'ajax',
+		alignTop: true,
+		overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
 	});
 
 });

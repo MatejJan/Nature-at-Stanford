@@ -7,17 +7,17 @@ html, body {
 	height: 100%
 }
 
-.grid4x3 {
+#grid4x3 {
 	display: table;
 	height: 100%;
 	width: 100%;
 }
 
-.grid4x3 > div {
+#grid4x3 > div {
 	display: table-row;
 }
 
-.grid4x3 > div > div {
+#grid4x3 > div > div {
 	display: table-cell;
 	padding: 8px 4px 8px 4px;
 }
