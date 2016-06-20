@@ -1,5 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 html, body {
 	padding: 0;
@@ -201,18 +202,40 @@ html, body {
 }
 
 #custom-content .left-pane {
-	padding-right: 40px;
+	padding: 20px;
 }
 
 #custom-content .card-title {
 	font-family: 'Avenir';
-	background-color: 
+	font-weight: bold;
 }
 
 #custom-content .card-subtitle, #custom-content .byline {
-	font-style: italic;
+	font-weight: lighter;
+	letter-spacing: 1px;
 }
 
-#custom-content .card-title, #custom-content .card-subtitle {
+#custom-content .card-subtitle {
+	border-bottom: solid 2px #e9ebee;
+	padding-bottom: 10px;
+}
+
+#custom-content .byline {
+	font-style: italic;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	margin-bottom: 0px;
+}
+
+#custom-content .card-content {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	line-height: 16px;
+	-webkit-font-smoothing: antialiased;
+	text-align: justify;
+	word-wrap: break-word;
+}
+
+#custom-content .card-title, #custom-content .card-subtitle, #custom-content .byline {
 	text-align: center;
 }
