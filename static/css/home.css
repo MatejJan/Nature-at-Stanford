@@ -167,6 +167,10 @@ html, body {
 	opacity: 1;
 }
 
+.portfolio-box-EMPTY:hover {
+	cursor: default;
+}
+
 /* Background images */
 
 #mj {
