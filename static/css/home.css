@@ -91,7 +91,7 @@ html, body {
 	text-align: left;
 	position: relative;
 	overflow: hidden;
-	max-width: 60%;
+	max-width: 75%;
 	margin: 20px auto;"
 }
 
@@ -188,4 +188,16 @@ html, body {
 
 #s2 {
 	background-image: url("../img/portfolio/2.jpg");
+}
+
+/* Project cards */
+#custom-content .left-pane, #custom-content .right-pane {
+	display: inline-block;
+	vertical-align: top;
+	width: 45%;
+	position: relative;
+}
+
+#custom-content .left-pane {
+	padding-right: 40px;
 }
