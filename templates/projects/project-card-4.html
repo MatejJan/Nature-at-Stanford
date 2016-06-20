@@ -2,29 +2,34 @@
 	<style>
 		#custom-content canvas {
 			position: relative;
-			max-width: 100%;
+			max-width: 110%;
 		}
 		#custom-content .pdf-controls {
 			text-align: center;
 		}
-		
+
+		#custom-content .right-pane {
+			padding-left: 40px;
+			vertical-align: top;
+		}
 	</style>
 	<div class="left-pane">
 		<div>
 			<canvas id="the-canvas" style="border: 1px solid black"></canvas>
 		</div>
 		<div class="pdf-controls">
-			<button id="prev">Previous</button>
+			<button id="prev" type="button">Prev</button>
 			&nbsp; &nbsp;
 			<span><span id="page_num"></span> / <span id="page_count"></span></span>
 			&nbsp; &nbsp;
-			<button id="next">Next</button>
+			<button id="next" type="button">Next</button>
 		</div>
 	</div>
 
 	<div class="right-pane">
 		<h1>Chime in, Tune out</h1>
-		<h4>Spreading mindfulness through wind chimes</h4>
+		<h5>Spreading mindfulness through wind chimes — By Emily Porter</h5>
+		<br>
 		<p>During our busy days, we often forget to pause and reflect on why we do what we do. The wind chime project gives passersby at Stanford the opportunity to share a mini moment of reflective joy as they hear the trigger of the wind chimes' noise. Repeated mini moments of joy affect emotional status and encourage the listener to develop these mini moments of mindfulness into full fledged habits over time.</p>
 	</div>
 

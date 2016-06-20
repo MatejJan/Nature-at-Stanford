@@ -193,11 +193,19 @@ html, body {
 /* Project cards */
 #custom-content .left-pane, #custom-content .right-pane {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 	width: 45%;
 	position: relative;
 }
 
 #custom-content .left-pane {
 	padding-right: 40px;
+}
+
+#custom-content h1 {
+	font-family: 'Avenir';
+}
+
+#custom-content h5 {
+	font-style: italic;
 }
