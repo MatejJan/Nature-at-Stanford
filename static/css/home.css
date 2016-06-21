@@ -55,10 +55,15 @@ html, body {
 	z-index: 4;
 	color: #fff;
 	text-align: center;
+	position: absolute;
+}
+
+.header, .subheader {
+	position: relative;
+	top: 35%;
 }
 
 .header {
-	padding-top: 10%; 
 	font-size: 45px;
 	font-weight: bold;
 	font-family: 'Open Sans', sans-serif;
